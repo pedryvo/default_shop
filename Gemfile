@@ -60,5 +60,9 @@ group :development do
   gem 'spring'
   # Foreman
   gem 'foreman'
+  # Guard autoreload
+  gem 'guard', '~> 2.15'
+  gem 'guard-livereload', require: false
+  gem 'rack-livereload'
 end
 
