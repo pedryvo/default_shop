@@ -2,6 +2,10 @@
 <div class="panel panel-default">
                         <div class="panel-heading">
                             Categories
+
+                            <%= link_to new_backoffice_category_path, class: "btn btn-success btn-circle pull-right", style: 'margin-top: -5px;' do %>
+                              <i class="fa fa-plus"></i>
+                            <% end %>
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">
@@ -21,10 +25,14 @@
                                             <td><%= category.id %></td>
                                             <td><%= category.description %></td>
                                             <td>
-                                              <button type="button" class="btn btn-primary btn-circle"><i class="fa fa-pencil"></i></button>
+                                              <%= link_to edit_backoffice_category_path(category) do %>
+                                                <button type="button" class="btn btn-primary btn-circle"><i class="fa fa-pencil"></i></button>
+                                              <% end %>
                                             </td>
                                             <td>
-                                              <button type="button" class="btn btn-danger btn-circle"><i class="fa fa-times"></i></button>
+                                              <%= link_to backoffice_category_path(category), method: :delete do %>
+                                                <button type="button" class="btn btn-danger btn-circle"><i class="fa fa-times"></i></button>
+                                              <% end %>
                                             </td>
                                         </tr>
                                       <% end %>
