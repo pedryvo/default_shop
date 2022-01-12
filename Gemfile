@@ -39,6 +39,9 @@ gem 'rails-i18n', '~> 4.0'
 gem 'devise'
 gem 'devise-i18n'
 
+# bootstrap_sb_admin_base_v2
+gem 'bootstrap_sb_admin_base_v2'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
