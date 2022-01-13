@@ -46,7 +46,7 @@ class Backoffice::AdminsController < BackofficeController
     if @admin.destroy
       redirect_to backoffice_admins_path, notice: "O admin (#{admin_email}) foi excluído com sucesso."
     else
-      render :edit
+      redirect_to backoffice_admins_path
     end
   end
 

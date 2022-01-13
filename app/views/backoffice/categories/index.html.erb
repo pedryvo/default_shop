@@ -31,7 +31,7 @@
               <% end %>
             </td>
             <td>
-              <%= link_to backoffice_category_path(category), method: :delete do %>
+              <%= link_to backoffice_category_path(category), method: :delete, data: {confirm: "Você deseja realmente excluir a categoria (#{category.description})?"} do %>
               <button type="button" class="btn btn-danger btn-circle"><i class="fa fa-times"></i></button>
               <% end %>
             </td>
