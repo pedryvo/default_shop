@@ -14,7 +14,7 @@ class Backoffice::CategoriesController < BackofficeController
     @category = Category.new(category_params)
 
     if @category.save
-      redirect_to backoffice_categories_path, notice: "A categoria '#{@category.description}' foi criada com sucesso."
+      redirect_to backoffice_categories_path, notice: "A categoria #{@category.description} foi criada com sucesso."
     else
       render :new
     end
@@ -25,7 +25,7 @@ class Backoffice::CategoriesController < BackofficeController
 
   def update
     if @category.update(category_params)
-      redirect_to backoffice_categories_path, notice: "A categoria '#{@category.description}' foi editada com sucesso."
+      redirect_to backoffice_categories_path, notice: "A categoria (#{@category.description}) foi editada com sucesso."
     else
       render :edit
     end
