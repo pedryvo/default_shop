@@ -5,6 +5,8 @@ class ApplicationController < ActionController::Base
 
   layout :layout_by_resource
 
+  include Pundit::Authorization
+
   private
 
   def layout_by_resource

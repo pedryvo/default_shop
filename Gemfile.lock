@@ -71,8 +71,6 @@ GEM
     em-websocket (0.5.3)
       eventmachine (>= 0.12.9)
       http_parser.rb (~> 0)
-    enum_help (0.0.18)
-      activesupport (>= 3.0.0)
     erubi (1.10.0)
     erubis (2.7.0)
     eventmachine (1.2.7)
@@ -136,6 +134,8 @@ GEM
     pry (0.14.1)
       coderay (~> 1.1)
       method_source (~> 1.0)
+    pundit (2.1.1)
+      activesupport (>= 3.0.0)
     racc (1.6.0)
     rack (1.6.13)
     rack-livereload (0.3.17)
@@ -236,7 +236,6 @@ DEPENDENCIES
   coffee-rails (~> 4.1.0)
   devise
   devise-i18n
-  enum_help
   faker
   foreman
   guard (~> 2.15)
@@ -244,6 +243,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   pry
+  pundit
   rack-livereload
   rails (= 4.2.11.3)
   rails-assets-bootbox!

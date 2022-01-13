@@ -42,6 +42,9 @@ gem 'devise-i18n'
 # bootstrap_sb_admin_base_v2
 gem 'bootstrap_sb_admin_base_v2'
 
+# Pundit
+gem 'pundit'
+
 source 'https://rails-assets.org' do
   # Bootstrap
   gem 'rails-assets-bootstrap', '3.3.7'
