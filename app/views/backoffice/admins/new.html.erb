@@ -1,0 +1,33 @@
+<br>
+
+<%= render 'backoffice/admins/shared/errors' %>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    Nova categoria
+  </div>
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-lg-6">
+        <%= form_for @admin, url: backoffice_admins_path, method: :post do |f| %>
+        <div class="form-group">
+          <label>E-mail</label>
+          <%= f.text_field :email, class: 'form-control', placeholder: 'E-mail' %>
+        </div>
+        <div class="form-group">
+          <label>Password</label>
+          <%= f.text_field :password, class: 'form-control', placeholder: 'Password' %>
+        </div>
+        <div class="form-group">
+          <label>Password confirmation</label>
+          <%= f.text_field :password_confirmation, class: 'form-control', placeholder: 'Password confirmation' %>
+        </div>
+        <%= f.submit 'Salvar', class: "btn btn-default"%>
+        <% end %>
+      </div>
+      <!-- /.col-lg-6 (nested) -->
+    </div>
+    <!-- /.row (nested) -->
+  </div>
+  <!-- /.panel-body -->
+</div>

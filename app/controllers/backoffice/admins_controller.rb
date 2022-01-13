@@ -1,9 +1,9 @@
-class Backoffice::CategoriesController < BackofficeController
+class Backoffice::AdminsController < BackofficeController
   before_action :set_admin, only: [:edit, :update]
 
 
   def index
-    @categories = Admin.all
+    @admins = Admin.all
   end
 
   def new
@@ -34,7 +34,7 @@ class Backoffice::CategoriesController < BackofficeController
   private
 
   def admin_params
-    params.require(:admin).permit(:email)
+    params.require(:admin).permit(:email, :password, :password_confirmation)
   end
 
   def set_admin

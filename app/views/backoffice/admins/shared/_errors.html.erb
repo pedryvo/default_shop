@@ -1,0 +1,7 @@
+<script>
+  <% if @admin.errors.any? %>
+    <% @admin.errors.full_messages.each do |message| %>
+      $.notify("<%= message %>", 'error');
+    <% end %>
+  <% end %>
+</script>
