@@ -24,6 +24,15 @@ class Backoffice::AdminsController < BackofficeController
   end
 
   def update
+    pwd = params[:admin][:password]
+    pwd_confirmation = params[:admin][:password_confirmation]
+
+    if pwd.blank? && pwd_confirmation.blank?
+      params[:admin].delete(:password)
+      params[:admin].delete(:password_confirmation)
+    end
+
+
     if @admin.update(admin_params)
       redirect_to backoffice_admins_path, notice: "O admin (#{@admin.email}) foi editada com sucesso."
     else
