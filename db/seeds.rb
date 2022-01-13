@@ -17,3 +17,6 @@ categories = ['Animais e Acessórios',
               'Imóveis']
 
 categories.each {|description| Category.find_or_create_by(description: description)}
+
+# ADM Padrão
+Admin.create!(email: 'admin@admin.com', name: 'Administrador Geral', password: '12345678', password_confirmation: '12345678')

@@ -39,6 +39,18 @@ gem 'rails-i18n', '~> 4.0'
 gem 'devise'
 gem 'devise-i18n'
 
+# bootstrap_sb_admin_base_v2
+gem 'bootstrap_sb_admin_base_v2'
+
+source 'https://rails-assets.org' do
+  # Bootstrap
+  gem 'rails-assets-bootstrap', '3.3.7'
+  # notifyJS
+  gem 'rails-assets-notifyjs'
+  # Bootbox
+  gem 'rails-assets-bootbox'
+end
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
@@ -54,5 +66,13 @@ group :development do
   gem 'spring'
   # Foreman
   gem 'foreman'
+  # Guard autoreload
+  gem 'guard', '~> 2.15'
+  gem 'guard-livereload', require: false
+  gem 'rack-livereload'
+  # Pry
+  gem 'pry'
+  # Faker
+  gem 'faker'
 end
 

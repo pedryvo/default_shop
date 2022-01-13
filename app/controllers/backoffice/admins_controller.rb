@@ -1,0 +1,62 @@
+class Backoffice::AdminsController < BackofficeController
+  before_action :set_admin, only: [:edit, :update, :destroy]
+
+
+  def index
+    @admins = Admin.all
+  end
+
+  def new
+    @admin = Admin.new
+  end
+
+  def create
+    @admin = Admin.new(admin_params)
+
+    if @admin.save
+      redirect_to backoffice_admins_path, notice: "O admin #{@admin.email} foi criado com sucesso."
+    else
+      render :new
+    end
+  end
+
+  def edit
+  end
+
+  def update
+    pwd = params[:admin][:password]
+    pwd_confirmation = params[:admin][:password_confirmation]
+
+    if pwd.blank? && pwd_confirmation.blank?
+      params[:admin].delete(:password)
+      params[:admin].delete(:password_confirmation)
+    end
+
+
+    if @admin.update(admin_params)
+      redirect_to backoffice_admins_path, notice: "O admin (#{@admin.email}) foi editado com sucesso."
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    admin_email = @admin.email
+
+    if @admin.destroy
+      redirect_to backoffice_admins_path, notice: "O admin (#{admin_email}) foi excluído com sucesso."
+    else
+      redirect_to backoffice_admins_path
+    end
+  end
+
+  private
+
+  def admin_params
+    params.require(:admin).permit(:email, :name, :password, :password_confirmation)
+  end
+
+  def set_admin
+    @admin = Admin.find(params[:id])
+  end
+end
