@@ -1,1 +1,24 @@
-editando categoria
+<br>
+
+<div class="panel panel-default">
+                        <div class="panel-heading">
+                            Editando categoria
+                        </div>
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                      <%= form_for @category, url: backoffice_category_path, method: :put do |f| %>
+                                        <div class="form-group">
+                                            <label>Descrição</label>
+                                            <%= f.text_field :description, class: 'form-control' %>
+                                            <p class="help-block">Insira acima a descrição da categoria.</p>
+                                        </div>
+                                        <%= f.submit 'Salvar', class: "btn btn-default"%>
+                                      <% end %>
+                                </div>
+                                <!-- /.col-lg-6 (nested) -->
+                            </div>
+                            <!-- /.row (nested) -->
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>

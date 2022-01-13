@@ -1,53 +1,53 @@
 <br>
 
 <% if notice %>
-  <div class="alert alert-success alert-dismissable">
-      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-      <%= notice %>
-  </div>
+<div class="alert alert-success alert-dismissable">
+  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+  <%= notice %>
+</div>
 <% end %>
 
 <div class="panel panel-default">
-                        <div class="panel-heading">
-                            Categories
+  <div class="panel-heading">
+    Categories
 
-                            <%= link_to new_backoffice_category_path, class: "btn btn-success btn-circle pull-right", style: 'margin-top: -5px;' do %>
-                              <i class="fa fa-plus"></i>
-                            <% end %>
-                        </div>
-                        <!-- /.panel-heading -->
-                        <div class="panel-body">
-                            <div class="table-responsive">
-                                <table class="table table-striped table-bordered table-hover text-center">
-                                    <thead>
-                                        <tr>
-                                            <th>#</th>
-                                            <th>Description</th>
-                                            <th>Edit</th>
-                                            <th>Delete</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                      <% @categories.each do |category| %>
-                                        <tr>
-                                            <td><%= category.id %></td>
-                                            <td><%= category.description %></td>
-                                            <td>
-                                              <%= link_to edit_backoffice_category_path(category) do %>
-                                                <button type="button" class="btn btn-primary btn-circle"><i class="fa fa-pencil"></i></button>
-                                              <% end %>
-                                            </td>
-                                            <td>
-                                              <%= link_to backoffice_category_path(category), method: :delete do %>
-                                                <button type="button" class="btn btn-danger btn-circle"><i class="fa fa-times"></i></button>
-                                              <% end %>
-                                            </td>
-                                        </tr>
-                                      <% end %>
-                                    </tbody>
-                                </table>
-                            </div>
-                            <!-- /.table-responsive -->
-                        </div>
-                        <!-- /.panel-body -->
-                    </div>
+    <%= link_to new_backoffice_category_path, class: "btn btn-success btn-circle pull-right", style: 'margin-top: -5px;' do %>
+    <i class="fa fa-plus"></i>
+    <% end %>
+  </div>
+  <!-- /.panel-heading -->
+  <div class="panel-body">
+    <div class="table-responsive">
+      <table class="table table-striped table-bordered table-hover text-center">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Description</th>
+            <th>Edit</th>
+            <th>Delete</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @categories.each do |category| %>
+          <tr>
+            <td><%= category.id %></td>
+            <td><%= category.description %></td>
+            <td>
+              <%= link_to edit_backoffice_category_path(category) do %>
+              <button type="button" class="btn btn-primary btn-circle"><i class="fa fa-pencil"></i></button>
+              <% end %>
+            </td>
+            <td>
+              <%= link_to backoffice_category_path(category), method: :delete do %>
+              <button type="button" class="btn btn-danger btn-circle"><i class="fa fa-times"></i></button>
+              <% end %>
+            </td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+    <!-- /.table-responsive -->
+  </div>
+  <!-- /.panel-body -->
+</div>

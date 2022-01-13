@@ -234,6 +234,7 @@ DEPENDENCIES
   guard-livereload
   jbuilder (~> 2.0)
   jquery-rails
+  pry
   rack-livereload
   rails (= 4.2.11.3)
   rails-assets-bootstrap (= 3.3.7)!
