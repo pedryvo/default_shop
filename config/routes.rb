@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
   
+  namespace :backoffice do
+  get 'admins/index'
+  end
+
   get 'backoffice', to: 'backoffice/dashboard#index'
   
   namespace :backoffice do
@@ -11,7 +15,8 @@ Rails.application.routes.draw do
     get 'home', to: 'home#index'
   end
 
-  devise_for :admins
+  devise_for :admins, skip: [:registrations]
+
   devise_for :members
   
   root 'site/home#index'
