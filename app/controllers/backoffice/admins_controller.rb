@@ -34,7 +34,7 @@ class Backoffice::AdminsController < BackofficeController
 
 
     if @admin.update(admin_params)
-      redirect_to backoffice_admins_path, notice: "O admin (#{@admin.email}) foi editada com sucesso."
+      redirect_to backoffice_admins_path, notice: "O admin (#{@admin.email}) foi editado com sucesso."
     else
       render :edit
     end
@@ -53,7 +53,7 @@ class Backoffice::AdminsController < BackofficeController
   private
 
   def admin_params
-    params.require(:admin).permit(:email, :password, :password_confirmation)
+    params.require(:admin).permit(:email, :name, :password, :password_confirmation)
   end
 
   def set_admin

@@ -16,6 +16,7 @@
           <tr>
             <th>#</th>
             <th>Email</th>
+            <th>Name</th>
             <th>Edit</th>
             <th>Delete</th>
           </tr>
@@ -25,6 +26,7 @@
           <tr>
             <td><%= admin.id %></td>
             <td><%= admin.email %></td>
+            <td><%= admin.name %></td>
             <td>
               <%= link_to edit_backoffice_admin_path(admin) do %>
                 <button type="button" class="btn btn-primary btn-circle"><i class="fa fa-pencil"></i></button>
@@ -35,6 +37,8 @@
                 <%= link_to backoffice_admin_path(admin), method: :delete, data: {confirm: "Você deseja realmente excluir o administrador (#{admin.email})?"} do %>
                   <button type="button" class="btn btn-danger btn-circle"><i class="fa fa-times"></i></button>
                 <% end %>
+              <% else %>
+                <button type="button" class="btn btn-danger btn-circle" disabled='disabled'><i class="fa fa-times"></i></button>
               <% end %>
             </td>
           </tr>
