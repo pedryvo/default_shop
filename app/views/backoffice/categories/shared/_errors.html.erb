@@ -1,10 +1,7 @@
-<% if @category.errors.any? %>
-<div class="alert alert-danger alert-dismissable">
-  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-  <% @category.errors.full_messages.each do |message| %>
-  <li><%= message %></li>
+<script>
+  <% if @category.errors.any? %>
+    <% @category.errors.full_messages.each do |message| %>
+      $.notify("<%= message %>", 'error');
+    <% end %>
   <% end %>
-</div>
-<% end %>
-
-<br>
+</script>
