@@ -3,11 +3,12 @@ class Backoffice::AdminsController < BackofficeController
 
 
   def index
-    @admins = Admin.all
+    @admins = policy_scope(Admin)
   end
 
   def new
     @admin = Admin.new
+    authorize @admin
   end
 
   def create
@@ -28,7 +29,7 @@ class Backoffice::AdminsController < BackofficeController
     pwd_confirmation = params[:admin][:password_confirmation]
 
     if pwd.blank? && pwd_confirmation.blank?
-      params[:admin].except!(:password, :password_confirmation)
+      params[:admin].except!(:password, :password_confirmation) 
     end
 
 

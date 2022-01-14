@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
 
 
   # Pundit
-  include Pundit::Authorization
+  include Pundit
 
   rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
 
