@@ -1,5 +1,7 @@
 class Backoffice::AdminsController < BackofficeController
   before_action :set_admin, only: [:edit, :update, :destroy]
+  after_action :verify_authorized, only: [:new, :destroy]
+  after_action :verify_policy_scoped, only: :index
 
 
   def index
@@ -41,6 +43,7 @@ class Backoffice::AdminsController < BackofficeController
   end
 
   def destroy
+    authorize @admin
     admin_email = @admin.email
 
     if @admin.destroy
