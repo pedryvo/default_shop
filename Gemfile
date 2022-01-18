@@ -75,5 +75,7 @@ group :development do
   gem 'pry'
   # Faker
   gem 'faker'
+  # Mailcatcher
+  gem 'mailcatcher'
 end
 

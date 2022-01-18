@@ -18,6 +18,7 @@
             <th>Email</th>
             <th>Name</th>
             <th>Access level</th>
+            <th>Send Mail</th>
             <th>Edit</th>
             <th>Delete</th>
           </tr>
@@ -29,6 +30,11 @@
             <td><%= admin.email %></td>
             <td><%= admin.name %></td>
             <td><%= admin.role_description_br %></td>
+            <td>
+              <%= link_to '#', remote: true do %>
+                <button type="button" class="btn btn-info btn-circle"><i class="fa fa-envelope"></i></button>
+              <% end %>
+            </td>
             <td>
               <%= link_to edit_backoffice_admin_path(admin) do %>
                 <button type="button" class="btn btn-primary btn-circle"><i class="fa fa-pencil"></i></button>
@@ -52,3 +58,6 @@
   </div>
   <!-- /.panel-body -->
 </div>
+
+
+<%= render 'backoffice/admins/shared/send_mail' %>

@@ -36,6 +36,7 @@ class Backoffice::AdminsController < BackofficeController
 
 
     if @admin.update(admin_params)
+      AdminMailer.update_email(current_admin, @admin).deliver_now
       redirect_to backoffice_admins_path, notice: "O admin (#{@admin.email}) foi editado com sucesso."
     else
       render :edit
