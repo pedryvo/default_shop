@@ -31,7 +31,7 @@
             <td><%= admin.name %></td>
             <td><%= admin.role_description_br %></td>
             <td>
-              <%= link_to '#', remote: true do %>
+              <%= link_to edit_backoffice_send_mail_path(admin), remote: true do %>
                 <button type="button" class="btn btn-info btn-circle"><i class="fa fa-envelope"></i></button>
               <% end %>
             </td>
