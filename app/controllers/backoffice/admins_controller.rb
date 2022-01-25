@@ -57,7 +57,11 @@ class Backoffice::AdminsController < BackofficeController
   private
 
   def admin_params
-    params.require(:admin).permit(policy(@admin).permitted_attributes)
+    if @admin.blank?
+      params.require(:admin).permit(:email, :name, :role, :password, :password_confirmation)
+    else
+      params.require(:admin).permit(policy(@admin).permitted_attributes)
+    end
   end
 
   def set_admin
