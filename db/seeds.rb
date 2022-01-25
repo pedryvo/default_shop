@@ -24,3 +24,8 @@ Admin.create!(email: 'admin@admin.com', name: 'Administrador Geral', password: '
 10.times do
   Admin.create!(email: Faker::Internet.email, name: Faker::Name.name_with_middle, password: '12345678', password_confirmation: '12345678', role: [0,1].sample)
 end
+
+# Ads
+100.times do
+  Ad.create!(title: Faker::Lorem.sentence, description: Faker::Lorem.paragraph, member: Member.all.sample, category: Category.all.sample)
+end
