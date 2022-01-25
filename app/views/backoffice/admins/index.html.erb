@@ -2,7 +2,7 @@
 
 <div class="panel panel-default">
   <div class="panel-heading">
-    Categories
+    Admins
 
     <%= link_to new_backoffice_admin_path, class: "btn btn-success btn-circle pull-right", style: 'margin-top: -5px;' do %>
     <i class="fa fa-plus"></i>
@@ -17,6 +17,8 @@
             <th>#</th>
             <th>Email</th>
             <th>Name</th>
+            <th>Access level</th>
+            <th>Send Mail</th>
             <th>Edit</th>
             <th>Delete</th>
           </tr>
@@ -27,13 +29,19 @@
             <td><%= admin.id %></td>
             <td><%= admin.email %></td>
             <td><%= admin.name %></td>
+            <td><%= admin.role_description_br %></td>
+            <td>
+              <%= link_to edit_backoffice_send_mail_path(admin), remote: true do %>
+                <button type="button" class="btn btn-info btn-circle"><i class="fa fa-envelope"></i></button>
+              <% end %>
+            </td>
             <td>
               <%= link_to edit_backoffice_admin_path(admin) do %>
                 <button type="button" class="btn btn-primary btn-circle"><i class="fa fa-pencil"></i></button>
               <% end %>
             </td>
             <td>
-              <% if current_admin.id != admin.id %>
+              <% if (current_admin.id != admin.id) && policy(@admins).destroy? %>
                 <%= link_to backoffice_admin_path(admin), method: :delete, data: {confirm: "Você deseja realmente excluir o administrador (#{admin.email})?"} do %>
                   <button type="button" class="btn btn-danger btn-circle"><i class="fa fa-times"></i></button>
                 <% end %>
@@ -50,3 +58,6 @@
   </div>
   <!-- /.panel-body -->
 </div>
+
+
+<%= render 'backoffice/admins/shared/send_mail' %>
