@@ -27,5 +27,5 @@ end
 
 # Ads
 100.times do
-  Ad.create!(title: Faker::Lorem.sentence, description: Faker::Lorem.paragraph, member: Member.all.sample, category: Category.all.sample)
+  Ad.create!(title: Faker::Lorem.sentence, description: LeroleroGenerator.paragraph, member: Member.all.sample, category: Category.all.sample)
 end

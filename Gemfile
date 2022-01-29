@@ -77,5 +77,7 @@ group :development do
   gem 'faker'
   # Mailcatcher
   gem 'mailcatcher'
+  # Lero Lero
+  gem 'lerolero_generator'
 end
 
