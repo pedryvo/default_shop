@@ -43,6 +43,9 @@ gem 'bootstrap_sb_admin_base_v2'
 # Pundit
 gem 'pundit'
 
+# Money Rails
+gem 'money-rails', '~>1.12'
+
 source 'https://rails-assets.org' do
   # Bootstrap
   gem 'rails-assets-bootstrap', '3.3.7'
