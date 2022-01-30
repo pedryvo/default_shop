@@ -27,5 +27,5 @@ end
 
 # Ads
 100.times do
-  Ad.create!(title: Faker::Lorem.sentence, description: LeroleroGenerator.paragraph, member: Member.all.sample, category: Category.all.sample)
+  Ad.create!(title: Faker::Lorem.sentence, description: LeroleroGenerator.paragraph, member: Member.all.sample, category: Category.all.sample, price_cents: (rand(500.0...600.9)).to_s)
 end
